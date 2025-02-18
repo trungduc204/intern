@@ -1,5 +1,7 @@
 <?php
 
+use App\Domains\Auth\Http\Controllers\AdminController;
+use App\Domains\Auth\Http\Controllers\AuthenController;
 use App\Domains\Category\Http\Controllers\CategoryController;
 use App\Domains\Product\http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -38,5 +40,9 @@ Route::prefix('admin')->group(function(){
     Route::put('categories/update/{id}', [CategoryController::class, 'updateCate'])->name('updateCate');
     // Route::delete('admin/products/delete/{id}', [ProductController::class, 'delete'])->name('deletePro');
 
+    //auth
+    Route::get('login' ,[AuthenController::class, 'showFormLogin'])->name('login');
+
+    Route::get('register' ,[AuthenController::class, 'showFormRegister'])->name('register');
 });
 
