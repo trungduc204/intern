@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function showFormLogin(){
-        return view('layouts.login');
-    }
-    public function showFormRegister(){
-        return view('layouts.register');
-    }
+    // public function showFormLogin(){
+    //     return view('layouts.login');
+    // }
+    // public function showFormRegister(){
+    //     return view('layouts.register');
+    // }
+    public function dashboard(){
+        return view('layouts.app');
+    } 
 }

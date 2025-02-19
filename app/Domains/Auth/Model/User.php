@@ -2,10 +2,12 @@
 
 namespace App\Domains\Auth\Model;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+
+class User extends Authenticatable
 {
     use HasFactory;
     const TYPE_ADMIN = 'admin';
@@ -15,6 +17,7 @@ class User extends Model
         'name',
         'email',
         'password',
+        'type'
     ];
 
     protected $hidden = [

@@ -70,8 +70,8 @@
             padding: 40px;
             width: 100%;
             color: #fff;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards, zoomIn 1s ease-out;
+            /* opacity: 0;
+            animation: fadeIn 1.5s forwards, zoomIn 1s ease-out; */
             max-width: 400px;
             background: linear-gradient(135deg, rgba(20, 20, 60, 0.9), rgba(0, 0, 40, 0.95)); /* Tối hơn */
             border: 2px solid rgba(70, 117, 245, 0.3); /* Viền giảm sáng */
@@ -144,7 +144,7 @@
             border-radius: 50%;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             opacity: 0.8;
-            animation: moonMovement 5s linear infinite;
+            /* animation: moonMovement 5s linear infinite; */
         }
 
         /* Hiệu ứng chuyển động của ông trăng */
