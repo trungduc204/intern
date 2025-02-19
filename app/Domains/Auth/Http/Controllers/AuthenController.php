@@ -18,24 +18,27 @@ class AuthenController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
- 
+    
         if (Auth::attempt($credentials)) {
             request()->session()->regenerate();
-         /**
-          * @var User $user
-          */
-            $user= Auth::user();
-          if($user->isAdmin()){
-            return redirect()->route('admin.app');
-          }
-          return redirect()->route('register');
+    
+            /**
+             * @var User $user
+             */
+            $user = Auth::user();
+    
+            if ($user->isAdmin()) {
+                return redirect()->route('admin.app');
+            }
+            return redirect()->route('error.403');
+            
         }
- 
+    
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
-    public function showFormRegister()
+        public function showFormRegister()
     {
         return view('auth.register');
     }

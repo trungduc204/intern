@@ -60,6 +60,11 @@ Route::prefix('v1')
         Route::get('register', [AuthenController::class, 'showFormRegister'])->name('register');
         Route::post('register', [AuthenController::class, 'handleRegister']);
         Route::post('logout', [AuthenController::class, 'logout'])->name('logout');
+        //error
+        Route::get('403', [AuthenController::class, 'handleLogin'])->name('403');
 
-      
+        Route::get('/403', function () {
+            return response()->view('error.403', [], 403);
+        })->name('error.403');
+        
     });

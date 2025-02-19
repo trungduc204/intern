@@ -14,6 +14,6 @@ class AdminController extends Controller
     //     return view('layouts.register');
     // }
     public function dashboard(){
-        return view('layouts.app');
+        return view('dashboard');
     } 
 }

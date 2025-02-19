@@ -130,9 +130,10 @@
 
         /* Navbar */
         .navbar-custom {
-            background: #f8f9fa;
+            background:linear-gradient(45deg, rgb(210, 224, 210), rgb(195, 241, 238));
             padding: 10px;
             display: flex;
+            border-radius: 8px;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #ddd;
@@ -163,7 +164,7 @@
 
         /* Dashboard Box */
         .dashboard-box {
-            background: #fff;
+            background:  rgb(205, 207, 205);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -240,11 +241,7 @@
         </div>
     </div>
 
-    <div class="dashboard-box mt-3">
-        <h4 class="text-primary">👋 Welcome, {{ Auth::user()->name ?? 'Guest' }}!</h4>
-        <p>Manage your products, categories, and orders with ease.</p>
-    </div>
-
+    @yield('dashboard')
     <div class="mt-4">
         @yield('content')
     </div>
